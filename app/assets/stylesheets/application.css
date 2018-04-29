@@ -36,6 +36,10 @@ body {
   flex-direction: column;
 }
 
+section {
+  border: 1px solid blue;
+}
+
 .form {
 /*  display: flex;
   flex-direction: column;*/
