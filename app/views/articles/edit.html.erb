@@ -1,9 +1,12 @@
-<header class="header">
-  <h1 class="header__title">Edit an article</h1>
-  <%= render 'articles_nav' %>
-</header>
-<section class="section main__section">
-  <section class="section form__section">
-    <%= render 'form' %>
-  </section>
+<section class="article form__section">
+  <header class="header">
+    <h1 class="header__title">Edit an article</h1>
+    <%= render 'articles_nav' %>
+  </header>
+  <%= render 'form' %>
+  <%= link_to 'Delete', article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?"}
+  %>
 </section>
+

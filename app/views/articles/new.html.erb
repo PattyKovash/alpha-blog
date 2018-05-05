@@ -1,12 +1,9 @@
-<header class="header">
-  <h1 class="header__title">Create an article</h1>
+<section class="article form__section">
+  <header class="header">
+    <h1 class="header__title">Create an article</h1>
+    <%= render 'articles_nav' %>
+  </header>
   <%= render 'articles_nav' %>
-</header>
-<main class="main">
-  <section class="main__section">
-    <section class="article form__section">
-      <%= render 'articles_nav' %>
-      <%= render 'form' %>
-    </section>
-  </section>
-</main>
+  <%= render 'form' %>
+</section>
+
