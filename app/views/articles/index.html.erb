@@ -21,6 +21,13 @@
             <td class="table_data"><%= article.created_at %></td>
             <td class="table_data"><%= link_to "EDIT", edit_article_path(article) %></td>
             <td class="table_data"><%= link_to "SHOW", article_path(article) %></td>
+            <td class="table_data">
+              <%= link_to "X", article_path(article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }
+              %>
+
+            </td>
           </tr>
         <% end %>
       <% end %>
