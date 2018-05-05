@@ -40,6 +40,10 @@ section {
   border: 1px solid blue;
 }
 
+/*******************************************************/
+/* Form Styles                                         */
+/*******************************************************/
+
 .form {
 /*  display: flex;
   flex-direction: column;*/
@@ -54,4 +58,19 @@ section {
 
 .article-form {
   width: 80%;
+}
+
+/*******************************************************/
+/* Table Styles                                        */
+/*******************************************************/
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table, .table__head, .table__data {
+  overflow: auto;
+  border: 1px solid grey;
+  text-align: left;
 }

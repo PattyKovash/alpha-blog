@@ -2,6 +2,11 @@
 
 # Article controller
 class ArticlesController < ApplicationController
+  # Function to render all articles in index
+  def index
+    @articles = Article.all
+  end
+
   # Create new article
   def new
     @article = Article.new
