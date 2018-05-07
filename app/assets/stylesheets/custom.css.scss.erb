@@ -1,0 +1,126 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  box-sizing: border-box;
+  font: 62.5% sans-serif;
+}
+
+*, *:before, *:after, *:visited, *:active {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+*:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background: #fff;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* Images */
+  .img_pinkClouds {
+    background-image: url('hero_pink_clouds.jpg');
+  }
+
+  .img_deskLayout {
+    background-image: url('desk_layout.jpg');
+  }
+
+/* Containers */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.wrapper {
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* Main Header */
+
+.mainHeader {
+  width: 95%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: 200;
+  padding: 0px 5px 10px 5px;
+}
+
+.logo:active {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.logo a:hover,
+.logo a:active,
+.logo a:visited {
+  text-decoration: none;
+  color: #000;
+  margin-top: 20px;
+}
+
+/* Main Nav */
+
+.navMain ul {
+  flex-wrap: wrap;
+  margin: 0;
+  font-weight: 300;
+}
+
+.navMain__listItem {
+  flex: 1;
+  align-items: center;
+}
+
+.navMain__listItem a {
+  padding: 20px;
+  flex: 1;
+  color: #000;
+}
+
+.navMain__listItem a:hover,
+.navMain__listItem a:active {
+  border-top: 2px solid #e2be86;
+  text-decoration: none;
+  padding-top: 18px;
+  color: #e2be86;
+  font-weight: 300;
+}
+
+/* Hero Section */
+.hero {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__title {
+  border: 6px solid #000;
+  padding: 2% 4%;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 400;
+  background-color: rgba(255,255,255,0.5);
+}
