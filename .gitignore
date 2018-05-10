@@ -30,4 +30,4 @@
 /config/master.key
 
 # Cloudinary API
-cloudinary.yml
+/config/cloudinary.yml
