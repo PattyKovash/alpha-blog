@@ -1,35 +1,7 @@
 <section class="flex hero img_deskLayout">
   <h1 class="hero__title">blog</h1>
 </section>
+<%= render 'articles_nav' %>
 <section class="flex">
-  <table class="table">
-    <thead class="table__head">
-      <tr class="table__row">
-        <th class="table__headData">Title</th>
-        <th class="table__headData">Description</th>
-        <th class="table__headData">Created On</th>
-        <th class="table__headData" colspan=2></th>
-      </tr>
-    </thead>
-    <tbody class="table_body">
-      <% if @articles != nil %>
-        <% @articles.each do |article| %>
-          <tr class="table__row">
-            <td class="table_data"><%= link_to article.title, article_path(article) %></td>
-            <td class="table_data"><%= article.description %></td>
-            <td class="table_data"><%= article.created_at %></td>
-            <td class="table_data"><%= link_to "EDIT", edit_article_path(article) %></td>
-            <td class="table_data"><%= link_to "SHOW", article_path(article) %></td>
-            <td class="table_data">
-              <%= link_to "X", article_path(article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" }
-              %>
-
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'post_entry_view', articles: @articles %>
 </section>

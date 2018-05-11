@@ -1,0 +1,7 @@
+<section class="flex flex-col entry">
+  <% if articles != nil %>
+    <% articles.each do |article| %>
+      <%= render 'post_item', article: article %>
+    <% end %>
+  <% end %>
+</section>
