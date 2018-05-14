@@ -2,7 +2,10 @@
 
 # Article controller
 class ArticlesController < ApplicationController
+  before_action :set_sub_menu
   before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_default, only: [:create]
+
   # Function to render all articles in index
   def index
     @articles = Article.all
@@ -49,6 +52,29 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  # Set default url for image
+  def set_default
+    url = params['article']['image_url']
+    return unless url == ''
+    params['article']['image_url'] = cl_image_path('hero_pink_clouds.jpg', transformation: [{ crop: 'fill' }])
+  end
+
+  # Set submenu
+  def set_sub_menu
+    @menu = {
+      nav: [
+        ['Articles', articles_path],
+        ['Create New', new_article_path]
+      ],
+      classes: {
+        nav_class: 'articles__nav',
+        nav_list_class: 'articles__navList',
+        nav_listItem_class: 'articles__navListItem',
+        nav_a_class: nil
+      }
+    }
+  end
+
   private
 
   def set_article
@@ -56,6 +82,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :image_url, :content)
   end
 end

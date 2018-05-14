@@ -17,3 +17,31 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+(function($) {
+
+  // Dom manipulation code
+  document.addEventListener('DOMContentLoaded', (e) => {
+
+    function selectedNav(e) {
+      console.log('e: ', e);
+      console.log('this: ', this)
+      let previous = document.querySelector('.navMain a.selected');
+      let current = e.target;
+      console.log('current: ', current);
+      console.log('previos: ', previous);
+      current.classList.add('selected');
+      if (previous) {
+        previous.classList.remove('selected');
+        console.log('previous classList: ', previous.classList);
+      }
+      console.log(document.querySelector('.navMain a.selected'));
+    }
+
+    let mainNav = document.querySelector('.navMain');
+    mainNav.addEventListener('click', selectedNav);
+  });
+
+
+
+}(jQuery));

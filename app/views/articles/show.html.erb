@@ -1,7 +1,10 @@
 <section class="section article">
   <header class="header">
     <h1 class="header__title">Showing Selected Article</h1>
-    <%= render 'articles_nav' %>
+    <%= render 'layouts/sub_nav',
+      nav: @menu[:nav],
+      classes: @menu[:classes]
+    %>
   </header>
   <section class="section">
     <h2 class="article__title">
