@@ -1,0 +1,11 @@
+<nav class=<%= classes[:nav_class] %>>
+  <ul class=<%= classes[:nav_list_class] %>>
+    <% if nav != nil %>
+      <% nav.each do |item| %>
+          <li class=<%= classes[:nav_listItem_class] %>>
+            <%= link_to item[0], item[1], class: classes[:nav_a_class] %>
+          </li>
+      <% end %>
+    <% end %>
+  </ul>
+</nav>

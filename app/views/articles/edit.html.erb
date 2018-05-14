@@ -1,7 +1,10 @@
 <section class="article form__section">
   <header class="header">
     <h1 class="header__title">Edit an article</h1>
-    <%= render 'articles_nav' %>
+    <%= render 'layouts/sub_nav',
+  nav: @menu[:nav],
+  classes: @menu[:classes]
+%>
   </header>
   <%= render 'form' %>
   <%= link_to 'Delete', article_path(@article),

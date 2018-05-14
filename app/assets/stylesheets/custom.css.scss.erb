@@ -35,6 +35,10 @@ body {
     background-image: url('https://res.cloudinary.com/khamd002/image/upload/v1525990297/desk_layout_xptpl2.jpg');
   }
 
+  .img_med {
+    width: 100%;
+  }
+
 /* Containers */
 
 .flex {
@@ -48,6 +52,23 @@ body {
 .wrapper {
   min-height: 100vh;
   align-items: center;
+}
+
+.two_col {
+  border: 1px solid blue;
+  width: 85%;
+  justify-content: space-between;
+}
+
+.entry {
+  flex-basis: 70%;
+  align-self: flex-start;
+  border: 1px solid green;
+}
+
+.right_sidebar {
+  flex-basis: 25%;
+  border: 1px solid red;
 }
 
 /* Main Header */
@@ -76,34 +97,6 @@ body {
   margin-top: 20px;
 }
 
-/* Main Nav */
-
-.navMain ul {
-  flex-wrap: wrap;
-  margin: 0;
-  font-weight: 300;
-}
-
-.navMain__listItem {
-  flex: 1;
-  align-items: center;
-}
-
-.navMain__listItem a {
-  padding: 20px;
-  flex: 1;
-  color: #000;
-}
-
-.navMain__listItem a:hover,
-.navMain__listItem a:active {
-  border-top: 2px solid #e2be86;
-  text-decoration: none;
-  padding-top: 18px;
-  color: #e2be86;
-  font-weight: 300;
-}
-
 /* Hero Section */
 .hero {
   background-position: center;
@@ -124,3 +117,4 @@ body {
   font-weight: 400;
   background-color: rgba(255,255,255,0.5);
 }
+
