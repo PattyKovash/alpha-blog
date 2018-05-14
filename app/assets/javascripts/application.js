@@ -19,14 +19,16 @@
 //= require_tree .
 
 (function($) {
+
+  // "turbolinks:load" event is a workaround for a Turbolinks
+  // bug where JS code only worked on page reload.
   document.addEventListener("turbolinks:load", function() {
 
-    // Adds selected class to current page for nav styling.
-    function selectedNav() {
+    // Function that returns current URL root pathname
+    function getRootPathname() {
       let pathname,
           pathRoot,
-          indEnd,
-          current
+          indEnd
 
       pathname = window.location.pathname;
 
@@ -36,6 +38,15 @@
         indEnd = pathname.indexOf('/', 1);
         pathRoot = pathname.slice(0, indEnd);
       }
+      return pathRoot;
+    }
+
+    // Adds selected class to current page for nav styling.
+    function selectedNav() {
+      let pathRoot,
+          current
+
+      pathRoot = getRootPathname();
       current = document.querySelector(`.navMain a[href*="${pathRoot}"]`);
       current.classList.add('selected');
     }
