@@ -19,29 +19,33 @@
 //= require_tree .
 
 (function($) {
+  document.addEventListener("turbolinks:load", function() {
 
-  // Dom manipulation code
-  document.addEventListener('DOMContentLoaded', (e) => {
+    // Adds selected class to current page for nav styling.
+    function selectedNav() {
+      let pathname,
+          pathRoot,
+          indEnd,
+          current
 
-    function selectedNav(e) {
-      console.log('e: ', e);
-      console.log('this: ', this)
-      let previous = document.querySelector('.navMain a.selected');
-      let current = e.target;
-      console.log('current: ', current);
-      console.log('previos: ', previous);
-      current.classList.add('selected');
-      if (previous) {
-        previous.classList.remove('selected');
-        console.log('previous classList: ', previous.classList);
+      pathname = window.location.pathname;
+
+      if (pathname === '/') {
+        pathRoot = pathname;
+      } else {
+        indEnd = pathname.indexOf('/', 1);
+        pathRoot = pathname.slice(0, indEnd);
       }
-      console.log(document.querySelector('.navMain a.selected'));
+      current = document.querySelector(`.navMain a[href*="${pathRoot}"]`);
+      current.classList.add('selected');
     }
 
-    let mainNav = document.querySelector('.navMain');
-    mainNav.addEventListener('click', selectedNav);
+    // Function to run on initialization
+    function init() {
+      selectedNav();
+    }
+
+    // Invoke init
+    init();
   });
-
-
-
 }(jQuery));
