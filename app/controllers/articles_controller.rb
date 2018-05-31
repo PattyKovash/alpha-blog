@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   # Function to render all articles in index
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:search])
   end
 
   # Create new article
@@ -82,6 +82,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :image_url, :content)
+    params.require(:article).permit(:title, :description, :image_url, :content, :search)
   end
 end

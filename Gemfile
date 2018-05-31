@@ -43,12 +43,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cloudinary'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'pg'
+  gem 'pg_search'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
+  gem 'pg'
+  gem 'pg_search'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -60,6 +63,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'pg_search'
 end
 
 group :test do

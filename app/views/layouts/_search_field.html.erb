@@ -1,0 +1,9 @@
+<div class="flex search">
+  <%= form_tag(articles_path, method: :get, autocomplete: "on") do %>
+    <%= text_field_tag :search, params[:search],
+      { class: "form__field_input_textField search_input js_search_input",
+            placeholder: "search" }
+    %>
+    <%= button_tag '<i class="fas fa-search"></i>'.html_safe, class: "search_submit js_search_submit" %>
+  <% end %>
+</div>
