@@ -1,4 +1,7 @@
 <header class="flex mainHeader">
   <h1 class="logo"><%= link_to 'AlphaBlog', root_path%></h1>
-  <%= render 'layouts/main_nav' %>
+  <div class="flex header_nav">
+    <%= render 'layouts/main_nav' %>
+    <%= render 'layouts/search_field' %>
+  </div>
 </header>

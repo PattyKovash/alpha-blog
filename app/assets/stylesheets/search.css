@@ -1,0 +1,51 @@
+/* Search Bar Styles */
+
+.search {
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.search_input {
+  font-style: italic;
+  padding: 3px 7px;
+}
+
+.search_submit {
+  align-self: flex-end;
+  color: #ccc;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.search .fas.fa-search {
+  color: #ccc;
+  z-index: 2;
+}
+
+.slide_in {
+  transition: all .1s;
+  width: 85%;
+  opacity: 1;
+}
+
+.new-item {
+  /* 0 does not work so we have to use a small number */
+  /* Start our small */
+  flex: .00001;
+
+  background: rgba(0, 0, 0, .4);
+
+  -webkit-animation: flexGrow 500ms ease forwards;
+  -o-animation: flexGrow 500ms ease forwards;
+  animation: flexGrow 500ms ease forwards;
+}
+
+.remove-item {
+  flex: 1;
+
+  -webkit-animation: flexShrink 500ms ease forwards;
+  -o-animation: flexShrink 500ms ease forwards;
+  animation: flexShrink 500ms ease forwards;
+}

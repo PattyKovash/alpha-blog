@@ -1,0 +1,15 @@
+<h3 class="article_title">
+  <%= article.title %>
+</h3>
+<h4 class="article_date">
+  <%= article.created_at.strftime('%B %d, %Y') %>
+</h4>
+<p class="article_description">
+  <%= article.description %>
+</p>
+<%= link_to 'Edit', edit_article_path(article), class: 'btn btn_edit' %>
+<%= link_to 'Delete', article_path(article),
+    method: :delete,
+    data: { confirm: "Are you sure?" },
+    class: 'btn btn_delete'
+%>

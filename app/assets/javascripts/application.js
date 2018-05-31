@@ -20,28 +20,94 @@
 
 (function($) {
 
-  // Dom manipulation code
-  document.addEventListener('DOMContentLoaded', (e) => {
+  // "turbolinks:load" event is a workaround for a Turbolinks
+  // bug where JS code only worked on page reload.
+  document.addEventListener("turbolinks:load", function() {
 
-    function selectedNav(e) {
-      console.log('e: ', e);
-      console.log('this: ', this)
-      let previous = document.querySelector('.navMain a.selected');
-      let current = e.target;
-      console.log('current: ', current);
-      console.log('previos: ', previous);
-      current.classList.add('selected');
-      if (previous) {
-        previous.classList.remove('selected');
-        console.log('previous classList: ', previous.classList);
-      }
-      console.log(document.querySelector('.navMain a.selected'));
+    // Function elem of input selector
+    // target: string, selector to query document
+    function get_elem(target) {
+      return document.querySelector(target);
     }
 
-    let mainNav = document.querySelector('.navMain');
-    mainNav.addEventListener('click', selectedNav);
+    // Function that returns current URL root pathname
+    function getRootPathname() {
+      let pathname,
+          pathRoot,
+          indEnd
+
+      pathname = window.location.pathname;
+
+      if (pathname === '/') {
+        pathRoot = pathname;
+      } else {
+        indEnd = pathname.indexOf('/', 1);
+        pathRoot = pathname.slice(0, indEnd);
+      }
+      return pathRoot;
+    }
+
+    function removeClass(elem, classname) {
+      elem.classList.remove(classname);
+    }
+
+    function addClass(elem, classname) {
+      elem.classList.add(classname);
+    }
+
+    // Adds selected class to current page for nav styling.
+    function selectedNav() {
+      let pathRoot,
+          current
+
+      pathRoot = getRootPathname();
+      current = get_elem(`.navMain a[href*="${pathRoot}"]`);
+      addClass(current, 'selected');
+    }
+
+
+    function toggleClass(elem, classname) {
+      if (elem.classList.contains(classname)) {
+        removeClass(elem, classname);
+      } else {
+        addClass(elem, classname);
+      }
+    }
+
+    function setToggleDisplay(targets) {
+      targets.forEach((target) => {
+        let elem = get_elem(target);
+        if (elem) {
+          elem.addEventListener('click', () => {
+            toggleClass(elem, 'display_none');
+          });
+        }
+      });
+    }
+
+    function display_search() {
+      const search = get_elem('.search form');
+      const search_btn = get_elem('.js_search_submit');
+      const search_box = get_elem('.js_search_input');
+      search_btn.addEventListener('click', () => {
+          if (search_box) {
+            addClass(search_box, 'remove-item');
+            search_box.addEventListener('animationend', () => {
+              search_box.remove();
+            });
+          } else {
+            search.append("<div>HELLO</div>");
+          }
+      });
+    }
+
+    // Function to run on initialization
+    function init() {
+      selectedNav();
+      display_search();
+    }
+
+    // Invoke init
+    init();
   });
-
-
-
 }(jQuery));

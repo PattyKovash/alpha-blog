@@ -1,11 +1,6 @@
-<section class="flex hero img_deskLayout">
-  <h1 class="hero__title">blog</h1>
-</section>
-<%= render 'layouts/sub_nav',
-  nav: @menu[:nav],
-  classes: @menu[:classes]
-%>
+<%= render 'layouts/hero', img_class: 'img_deskLayout', title: 'blog' %>
 <section class="flex two_col">
   <%= render 'post_entry_view', articles: @articles %>
   <%= render 'article_sidebar' %>
 </section>
+

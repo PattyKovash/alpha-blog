@@ -2,6 +2,7 @@
   <% if articles != nil %>
     <% articles.each do |article| %>
       <%= render 'post_item', article: article %>
+      <hr class="divider">
     <% end %>
   <% end %>
 </section>
