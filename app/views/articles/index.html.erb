@@ -1,4 +1,8 @@
 <%= render 'layouts/hero', img_class: 'img_deskLayout', title: 'blog' %>
+<%= render 'layouts/sub_nav',
+  nav: @article_menu[:nav],
+  classes: @article_menu[:classes]
+%>
 <section class="flex two_col">
   <%= render 'post_entry_view', articles: @articles %>
   <%= render 'article_sidebar' %>

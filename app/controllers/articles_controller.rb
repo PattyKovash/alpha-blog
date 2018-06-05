@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
 
   # Set submenu
   def set_sub_menu
-    @menu = {
+    @article_menu = {
       nav: [
         ['Articles', articles_path],
         ['Create New', new_article_path]

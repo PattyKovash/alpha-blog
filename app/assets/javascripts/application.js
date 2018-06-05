@@ -65,7 +65,6 @@
       addClass(current, 'selected');
     }
 
-
     function toggleClass(elem, classname) {
       if (elem.classList.contains(classname)) {
         removeClass(elem, classname);
