@@ -1,4 +1,11 @@
-<%= render 'layouts/hero', img_class: 'img_deskLayout', title: 'blog' %>
+<%= render 'layouts/hero',
+  img_class: 'img_deskLayout',
+  input_partial: 'layouts/hero_basic_title',
+  options: {
+    title: 'blog',
+    title_class: ''
+  }
+%>
 <%= render 'layouts/sub_nav',
   nav: @article_menu[:nav],
   classes: @article_menu[:classes]
