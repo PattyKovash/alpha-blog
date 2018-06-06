@@ -1,4 +1,8 @@
-<%= render 'layouts/hero', img_class: 'img_pinkClouds', title: @article.title %>
+<%= render 'layouts/hero',
+  img_class: 'img_pinkClouds',
+  input_partial: 'layouts/hero_basic_title',
+  options: { title: @article.title }
+%>
 <section class="flex two_col">
   <section class="flex flex-col show_view">
     <%= render 'article_details', article: @article %>

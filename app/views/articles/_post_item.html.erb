@@ -1,14 +1,16 @@
 <article class="article_container">
-  <%= image_tag(article.image_url, alt: 'pink clouds', class: 'img_med article_image') %>
-  <p class="article_date"><%= article.created_at.strftime('%B %d, %Y') %></p>
-  <h3 class="article_title">
-    <%= article.title %>
-  </h3>
-  <p class="article_description">
-    <%= article.description %>
-  </p>
-  <p class="article_content">
-    <%= article.content %>
-  </p>
+  <%= link_to article do %>
+    <%= image_tag(article.image_url, alt: 'pink clouds', class: 'img_med article_image') %>
+    <p class="article_date"><%= article.created_at.strftime('%B %d, %Y') %></p>
+    <h3 class="article_title">
+      <%= article.title %>
+    </h3>
+    <p class="article_description">
+      <%= article.description %>
+    </p>
+    <p class="article_content">
+      <%= article.content %>
+    </p>
+  <% end %>
   <%= link_to 'Read More', article_path(article), class: 'read_more' %>
 </article>
