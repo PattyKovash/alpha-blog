@@ -1,14 +1,22 @@
 /* Search Bar Styles */
 
+input[type=search] {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 .search {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
 }
 
-.search_input {
-  font-style: italic;
+.search_input,
+.search_input:active {
   padding: 3px 7px;
+  margin-left: 20px;
+  font-size: 1.5rem;
 }
 
 .search_submit {

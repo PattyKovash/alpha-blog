@@ -1,0 +1,57 @@
+.signup {
+  width: 20%;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.signup input {
+  font-size: 1.9rem;
+}
+
+.signup input[type="text"],
+.signup input[type="text"]:focus {
+  min-width: 300px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  color: #545454;
+  color: var(--dark-grey);
+  margin-bottom: 20px;
+}
+
+.signup input[type="submit"] {
+  width: 70%;
+  min-width: 200px;
+  max-width: 250px;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+
+
+.signup input[type="submit"]:hover,
+.signup input[type="submit"]:focus
+ {
+  background: #E2BE89; /* if no browser support for CSS variables */
+  background: var(--secondary-color)
+}
+
+.signup input[type="submit"]:active {
+  background: #605858;
+  background: var(--default-btn-trns);
+}
+
+.signup-form {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1300px) {
+  .signup {
+    width: 25%;
+  }
+}

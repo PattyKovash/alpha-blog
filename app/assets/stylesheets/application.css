@@ -12,6 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require app_defaults_variables
  *= require custom
+ *= require hero
+ *= require buttons
  *= require navigation
+ *= require search
+ *= require signup
  */

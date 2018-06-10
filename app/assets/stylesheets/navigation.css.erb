@@ -22,12 +22,14 @@
   border-top: 2px solid #e2be86;
   text-decoration: none;
   padding-top: 18px;
-  color: #e2be86;
+  color: #e2be86; /* if no browser support for CSS variables */
+  color: var(--secondary-color);
   font-weight: 300;
 }
 
 .navMain .selected {
-  color: #e2be86;
+  color: #e2be86; /* if no browser support for CSS variables */
+  color: var(--secondary-color);
   font-weight: 300;
 }
 
