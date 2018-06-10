@@ -1,0 +1,7 @@
+<%= render 'layouts/hero_basic_title', options: { title: "Welcome" } %>
+<div class="<%= 'flex signup ' + (signup_class ||= '') %>">
+  <form class="<%= 'flex flex-col signup-form' + signup_form_class ||= '' %>">
+    <input type="text" name="signup_email" placeholder="E-mail">
+    <input class="btn" type="submit" name="signup_submit" value="Subscribe">
+  </form>
+</div>
