@@ -24,6 +24,7 @@ body {
   background: #fff;
   font-size: 1.6rem;
   letter-spacing: 1px;
+  min-height: 100%;
 }
 
 input,
@@ -155,4 +156,11 @@ button:hover {
 
 .display_none {
   display: none;
+}
+
+@media screen and (max-width: 725px) {
+  .mainHeader {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
